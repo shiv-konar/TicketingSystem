@@ -1,0 +1,13 @@
+{% extends 'base_contact.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+    <form method='POST' action=''>{% csrf_token %}
+        {{ contactForm|crispy }}
+
+    <input class='btn btn-primary' type='submit' value='Submit' />
+
+    </form>
+{% endblock %}

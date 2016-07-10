@@ -1,0 +1,12 @@
+{% extends 'base_logissue.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block issueLog_content %}
+
+    <h1>you can issue logs here</h1>
+        <form method="POST" action="">{% csrf_token %}
+            {{ logIssueform|crispy }}
+            <input class='btn btn-primary' type='submit' value='Submit' />
+        </form>
+{% endblock %}
