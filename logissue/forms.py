@@ -1,10 +1,14 @@
 from django import forms
-from .models import IssueLogs
+from .models import IssueLog, AddMessage
 
-class ABC(forms.ModelForm):
-    desc = forms.CharField(widget=forms.Textarea)
 
-class IssueForm(forms.ModelForm):
+class IssueLogForm(forms.ModelForm):
     class Meta:
-        model = IssueLogs
-        fields = ["client", "issueDescription"]
+        model = IssueLog
+        fields = ["client_name", "issue_description", "severity_index"]
+
+
+class AddMessageForm(forms.ModelForm):
+    class Meta:
+        model = AddMessage
+        fields = ["additional_information"]

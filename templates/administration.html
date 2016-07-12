@@ -1,0 +1,19 @@
+{% extends 'base_administration.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block addmessageform %}
+    <h1>You can add additional messages here.</h1>
+    <ul>
+        {% for issue in issues_list %}
+            <h3><li><a href="">{{ issue.issue_description }}</a></li></h3>
+                <form method="POST" action="">{% csrf_token %}
+            {{ form|crispy }}
+            <input class='btn btn-primary' type='submit' value='Submit' />
+        </form>
+        {% endfor %}
+
+    </ul>
+
+    <a href="profile.html">Log another issue?</a>
+{% endblock %}

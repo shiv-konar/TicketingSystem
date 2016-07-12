@@ -26,6 +26,9 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls'), name='accounts'),
     url(r'^$', RedirectView.as_view(url='/accounts/login')),
     url(r'^contact/', contact.views.contact , name='contact'),
-    #url(r'^logissue/', logissue.views.logissue, name='logissue'),
-    url(r'^accounts/profile', logissue.views.logissue, name='logissue'),
+    url(r'^logissue/', logissue.views.issuelog, name='logissue'),
+    url(r'^accounts/logissue/$', logissue.views.issuelog, name='logissue'),
+    url(r'^accounts/profile', logissue.views.issuelog, name='logissue'),
+    url(r'^accounts/administration', logissue.views.administration, name='administration'),
+    url(r'^administration', logissue.views.administration, name='administration'),
 ]
